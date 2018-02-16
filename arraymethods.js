@@ -30,14 +30,17 @@ addAnAlbum.addEventListener('click', newAlbum);
 
 // FUNCTIONS
 function newSong(){
-    songs.push(songName.value)
+    var songPush = songName.value;
+    songs.push(songPush[0].toUpperCase()+ songPush.substring(1));
     updateDom();
 }
 function newArtist(){
-    artist.push(artistName.value)
+    var artistPush = artistName.value;
+    artist.push(artistPush[0].toUpperCase()+ artistPush.substring(1));
     updateDom();
 }function newAlbum(){
-    album.push(albumName.value);
+    var albumPush = songName.value;
+    album.push(albumPush[0].toUpperCase()+ albumPush.substring(1));
     updateDom();
 }
 
@@ -110,56 +113,9 @@ function categories3(heading, array, method1, method2, method3, print){
     x = method2(array);
     x = method3(array);
     y = `<div><h3>${heading}</h3>${x}</div>`;
-    console.log(y);
+    // console.log(y);
     return y;
 };
-
-
-
-
-//NORMAL 
-normalDiv.innerHTML = categories2('Songs', songs, normalMethod, joinListMethod, 'normal');
-normalDiv.innerHTML += categories2('Artists', artist, normalMethod, joinListMethod, 'normal');
-normalDiv.innerHTML += categories2('Albums', album, normalMethod, joinListMethod, 'normal');
-
-
-// NORMAL HORIZONTAL
-normalHorizontalDiv.innerHTML = categories2('Songs', songs, normalMethod, joinCommaMethod, 'normal-horizontal');
-normalHorizontalDiv.innerHTML += categories2('Artists', artist, normalMethod, joinCommaMethod, 'normal-horizontal');
-normalHorizontalDiv.innerHTML += categories2('Albums', album, normalMethod, joinCommaMethod, 'normal-horizontal');
-
-// ALPHABETICAL HORIZONTAL
-alphabeticalHorizontalDiv.innerHTML = categories2('Songs', songs, sortMethod, joinCarrotMethod, 'alphabetical-horizontal');
-alphabeticalHorizontalDiv.innerHTML += categories2('Artists', artist, sortMethod, joinCarrotMethod, 'alphabetical-horizontal');
-alphabeticalHorizontalDiv.innerHTML += categories2('Albums', album, sortMethod, joinCarrotMethod, 'alphabetical-horizontal');
-
-//REVERSE 
-reverseDiv.innerHTML = categories2('Songs', songs, reverseMethod, joinListMethod, 'reverse');
-reverseDiv.innerHTML += categories2('Artists', artist, reverseMethod, joinListMethod, 'reverse');
-reverseDiv.innerHTML += categories2('Albums', album, reverseMethod, joinListMethod, 'reverse');
-
-//ASCENDING 
-ascendingDiv.innerHTML = categories3('Songs', songs, sortMethod, reverseMethod, joinListMethod, 'ascend');
-ascendingDiv.innerHTML += categories3('Artists',artist, sortMethod, reverseMethod, joinListMethod,'ascend');
-ascendingDiv.innerHTML += categories3('Albums', album, sortMethod, reverseMethod, joinListMethod,'ascend');
-
-
-// DESCENDING
-descendingDiv.innerHTML = categories2('Songs', songs, sortMethod, joinListMethod,'descend');
-descendingDiv.innerHTML += categories2('Artists',artist, sortMethod, joinListMethod,'descend');
-descendingDiv.innerHTML += categories2('Albums', album, sortMethod, joinListMethod,'descend');
-
-// NORMAL :
-normalColonDiv.innerHTML = categories2('Songs', songs, normalMethod, joinColonMethod, 'normal_:');
-normalColonDiv.innerHTML += categories2('Artists', artist, normalMethod, joinColonMethod, 'normal_:');
-normalColonDiv.innerHTML += categories2('Albums', album, normalMethod, joinColonMethod, 'normal_:');
-
-// NORMAL |
-normalPipeDiv.innerHTML = categories2('Songs', songs, normalMethod, joinPipeMethod, 'normal_|');
-normalPipeDiv.innerHTML += categories2('Artists', artist, normalMethod, joinPipeMethod, 'normal_|');
-normalPipeDiv.innerHTML += categories2('Albums', album, normalMethod, joinPipeMethod, 'normal_|');
-
-
 
 
 
@@ -206,3 +162,51 @@ normalPipeDiv.innerHTML = categories2('Songs', songs, normalMethod, joinPipeMeth
 normalPipeDiv.innerHTML += categories2('Artists', artist, normalMethod, joinPipeMethod, 'normal_|');
 normalPipeDiv.innerHTML += categories2('Albums', album, normalMethod, joinPipeMethod, 'normal_|');
 }
+
+updateDom();
+
+
+// function updateDom(){
+// console.log("ran");
+// //NORMAL 
+// normalDiv.innerHTML = categories2('Songs', songs, normalMethod, joinListMethod, 'normal');
+// normalDiv.innerHTML += categories2('Artists', artist, normalMethod, joinListMethod, 'normal');
+// normalDiv.innerHTML += categories2('Albums', album, normalMethod, joinListMethod, 'normal');
+
+
+// // NORMAL HORIZONTAL
+// normalHorizontalDiv.innerHTML = categories2('Songs', songs, normalMethod, joinCommaMethod, 'normal-horizontal');
+// normalHorizontalDiv.innerHTML += categories2('Artists', artist, normalMethod, joinCommaMethod, 'normal-horizontal');
+// normalHorizontalDiv.innerHTML += categories2('Albums', album, normalMethod, joinCommaMethod, 'normal-horizontal');
+
+// // ALPHABETICAL HORIZONTAL
+// alphabeticalHorizontalDiv.innerHTML = categories2('Songs', songs, sortMethod, joinCarrotMethod, 'alphabetical-horizontal');
+// alphabeticalHorizontalDiv.innerHTML += categories2('Artists', artist, sortMethod, joinCarrotMethod, 'alphabetical-horizontal');
+// alphabeticalHorizontalDiv.innerHTML += categories2('Albums', album, sortMethod, joinCarrotMethod, 'alphabetical-horizontal');
+
+// //REVERSE 
+// reverseDiv.innerHTML = categories2('Songs', songs, reverseMethod, joinListMethod, 'reverse');
+// reverseDiv.innerHTML += categories2('Artists', artist, reverseMethod, joinListMethod, 'reverse');
+// reverseDiv.innerHTML += categories2('Albums', album, reverseMethod, joinListMethod, 'reverse');
+
+// //ASCENDING 
+// ascendingDiv.innerHTML = categories3('Songs', songs, sortMethod, reverseMethod, joinListMethod, 'ascend');
+// ascendingDiv.innerHTML += categories3('Artists',artist, sortMethod, reverseMethod, joinListMethod,'ascend');
+// ascendingDiv.innerHTML += categories3('Albums', album, sortMethod, reverseMethod, joinListMethod,'ascend');
+
+
+// // DESCENDING
+// descendingDiv.innerHTML = categories2('Songs', songs, sortMethod, joinListMethod,'descend');
+// descendingDiv.innerHTML += categories2('Artists',artist, sortMethod, joinListMethod,'descend');
+// descendingDiv.innerHTML += categories2('Albums', album, sortMethod, joinListMethod,'descend');
+
+// // NORMAL :
+// normalColonDiv.innerHTML = categories2('Songs', songs, normalMethod, joinColonMethod, 'normal_:');
+// normalColonDiv.innerHTML += categories2('Artists', artist, normalMethod, joinColonMethod, 'normal_:');
+// normalColonDiv.innerHTML += categories2('Albums', album, normalMethod, joinColonMethod, 'normal_:');
+
+// // NORMAL |
+// normalPipeDiv.innerHTML = categories2('Songs', songs, normalMethod, joinPipeMethod, 'normal_|');
+// normalPipeDiv.innerHTML += categories2('Artists', artist, normalMethod, joinPipeMethod, 'normal_|');
+// normalPipeDiv.innerHTML += categories2('Albums', album, normalMethod, joinPipeMethod, 'normal_|');
+// }
