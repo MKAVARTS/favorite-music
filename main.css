@@ -1,0 +1,88 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+button{
+    font-size: 2em;
+}
+
+h2 {
+    text-align: center;
+    font-size: 4em;
+    text-decoration: underline;
+}
+
+div{
+    text-align: center;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: tomato;
+    font-size: 1.75em;
+    text-align: center;
+}
+
+input{
+    font-size: 2em;
+}
+
+#add-buttons{
+    display:flex;
+    justify-content: center;
+}
+
+#ascend{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#descend{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#normal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#reverse{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#normal-horizontal{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#alphabetical-horizontal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#normal-semicolon{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#normal-pipe{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+li {
+    list-style-type: none;
+}
